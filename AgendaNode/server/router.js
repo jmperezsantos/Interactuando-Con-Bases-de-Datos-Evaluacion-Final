@@ -80,7 +80,6 @@ router.post("/update", function (req, res){
 		var base = db.db("agendaGP");
 		var coleccion = base.collection("eventos");
 		try {
-			;
 			coleccion.update(
 				{_id:req.body.id },
 				{$set:{
@@ -95,9 +94,6 @@ router.post("/update", function (req, res){
 		} catch(e){
 			console.log(e);
 		}
-
-		
-		
 		db.close();
 	});
 });
@@ -107,6 +103,13 @@ router.get("/logout", function (req,res){
 	req.session.destroy(function(err) {
   			res.send("adios");
 	})
+});
+
+router.get("/", function (req,res){
+	
+	console.log("TODO OK");
+	res.status(200);
+	
 });
 
 
